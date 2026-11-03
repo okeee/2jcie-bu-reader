@@ -1,0 +1,12 @@
+# harvest-relay (https://github.com/okeee/harvest-relay) の設定例
+interval = 60
+endpoint = "http://uni.soracom.io"
+
+[[source]]
+name = "2jcie-bu"
+type = "stream"
+command = ["/usr/local/bin/2jcie-bu-reader", "--source", "ble", "--address", "XX:XX:XX:XX:XX:XX"]
+# 環境値は平均、瞬間的に変わる騒音・照度は平均と最大、地震・振動系は最大を送る
+aggregate = { default = "mean", noise = ["mean", "max"], light = ["mean", "max"], vibration = "max", si = "max", pga = "max", seismic_intensity = "max" }
+# 周期内に受信したサンプル数 (BLE で 1 秒ごとなら 60 秒周期で約 60)
+count_field = "samples"
