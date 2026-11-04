@@ -87,6 +87,15 @@ tools/adv-setting.py                                  # 現在の設定を表示
 tools/adv-setting.py --interval-ms 1000 --mode 0x03   # 1 秒間隔に変更
 ```
 
+## 以前の版 (1 本のスクリプトで送る)
+
+[legacy/2jcie-harvest.py](legacy/2jcie-harvest.py) は、harvest-relay に分ける前に使っていたスクリプトです。BLE (または USB) で読み、1 分ごとに集約して Unified Endpoint に直接送ります。センサーが 2JCIE-BU だけなら 1 本で完結しますが、今から使うなら 2jcie-bu-reader と harvest-relay の組み合わせをおすすめします。以前の版には、BlueZ に接続が残ってセンサーが見つからなくなる問題への対処が入っていません。
+
+```bash
+sudo apt install python3-bleak python3-requests
+legacy/2jcie-harvest.py --address XX:XX:XX:XX:XX:XX --once --dry-run   # 15 秒集めて表示だけ
+```
+
 ## 参考
 
 - [2JCIE-BU01 ユーザーズマニュアル (A279)](https://omronfs.omron.com/ja_JP/ecb/products/pdf/CDSC-015.pdf)
