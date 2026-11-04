@@ -98,7 +98,7 @@ legacy/2jcie-harvest.py --address XX:XX:XX:XX:XX:XX --once --dry-run   # 15 秒�
 
 ## 参考
 
-- [2JCIE-BU01 ユーザーズマニュアル (A279)](https://omronfs.omron.com/ja_JP/ecb/products/pdf/CDSC-015.pdf)
+- [環境センサ (USB 型) 2JCIE-BU01 ユーザーズマニュアル (CDSC-016B)](https://omronfs.omron.com/ja_JP/ecb/products/pdf/CDSC-016A-web1.pdf)
 
 ## ライセンス
 
